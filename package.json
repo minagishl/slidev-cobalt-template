@@ -1,0 +1,25 @@
+{
+  "name": "slidev-cobalt-template",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "packageManager": "bun",
+  "dependencies": {
+    "@slidev/cli": "^52.12.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "slidev-theme-cobalt": "^0.2.0",
+    "vue": "^3.5.28"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.58.2",
+    "prettier": "^3.8.1",
+    "prettier-plugin-slidev": "^1.0.5"
+  }
+}
