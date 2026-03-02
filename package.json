@@ -7,7 +7,8 @@
     "dev": "slidev --open",
     "export": "slidev export",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "ai-context": "node scripts/generate-ai-context.mjs --output THEME_CONTEXT.md"
   },
   "packageManager": "bun",
   "dependencies": {
