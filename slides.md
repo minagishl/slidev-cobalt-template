@@ -50,6 +50,7 @@ layout: toc
 
 ---
 layout: toc
+activeIndex: 2
 ---
 
 # Table of Contents (2 columns)
@@ -111,6 +112,16 @@ steps:
 ---
 
 ---
+layout: steps-layout
+start: 5
+steps:
+  - title: Review and test
+    body: Run automated tests and conduct peer reviews to catch issues before release.
+  - title: Deploy and monitor
+    body: Ship to production and watch metrics to ensure everything runs smoothly.
+---
+
+---
 layout: process-flow
 steps:
   - title: Planning
@@ -138,7 +149,7 @@ layout: table
 | Ultra | $249            | 5 TB    | VIP 24/7 White Glove |
 
 ---
-layout: two-cols
+layout: cols
 ---
 
 ::left::
@@ -156,6 +167,38 @@ Place any content in the left column: lists, paragraphs, or headings.
 ## Right Column
 
 The right column has equal width. Use this layout to compare ideas or show two related sections side by side.
+
+---
+layout: cols
+cols: 3
+---
+
+::left::
+
+## Left Column
+
+Content for the left column.
+
+- First point
+- Second point
+
+::middle::
+
+## Middle Column
+
+Content for the middle column.
+
+- Third point
+- Fourth point
+
+::right::
+
+## Right Column
+
+Content for the right column.
+
+- Fifth point
+- Sixth point
 
 ---
 layout: quote
@@ -179,6 +222,21 @@ Simple to customize, great typography, and the framed layouts really stand out i
 
 ---
 layout: panel
+color: black
+align: left
+---
+
+# Checkboxes
+
+You can create read-only checkboxes using Markdown task list syntax.
+
+- [ ] This item is not completed
+- [x] This item is completed
+
+Note that checkboxes are styled by the theme and cannot be toggled during the presentation.
+
+---
+layout: panel
 color: blue
 ---
 
@@ -192,11 +250,36 @@ color: black
 Another quote or statement
 
 ---
-layout: profile
-header: Table of Contents - About
+layout: panel
+color: black
+align: left
 ---
 
+# Why Open Source Matters
+
+## Community Driven
+
+Building together creates stronger, more resilient software that everyone can rely on.
+
+## Transparency
+
+Open code means open review — bugs get caught faster and trust is built over time.
+
+## Innovation
+
+Ideas from around the world merge into solutions no single team could have created alone.
+
+---
+layout: profile
+---
+
+::name::
+
 # Minagishl
+
+::default::
+
+<Label>Table of Contents - About</Label>
 
 Student Developer based in Japan\
 Currently participating in OSS projects
@@ -206,10 +289,15 @@ engaging in various engineering activities
 
 ---
 layout: profile
-header: Table of Contents - About
 ---
 
+::name::
+
 # Minagishl
+
+::default::
+
+<Label>Table of Contents - About</Label>
 
 1. What I do\
    Web development, game design, and building custom PCs
@@ -220,11 +308,117 @@ header: Table of Contents - About
 
 ---
 layout: frame-panel
-header: Table of Contents
 color: blue
 ---
 
+<Label>Table of Contents</Label>
+
 A short quote or statement
+
+---
+layout: panel
+color: blue
+align: left
+---
+
+Left-aligned quote
+
+---
+layout: panel
+color: blue
+align: right
+---
+
+Right-aligned quote
+
+---
+layout: frame-panel
+color: blue
+align: left
+---
+
+<Label>Alignment Example</Label>
+
+Left-aligned content
+
+---
+layout: frame-panel
+color: blue
+align: right
+---
+
+<Label>Alignment Example</Label>
+
+Right-aligned content
+
+---
+layout: section
+---
+
+# Label Component
+
+---
+layout: panel
+color: black
+align: left
+---
+
+<Label>Top Left (default)</Label>
+<Label position="top-right">Top Right</Label>
+<Label position="bottom-left">Bottom Left</Label>
+<Label position="bottom-right">Bottom Right</Label>
+
+Use `<Label>` to place a label in any corner of the slide.
+
+The `position` prop accepts `top-left` (default), `top-right`, `bottom-left`, or `bottom-right`.
+
+---
+layout: frame-panel
+color: blue
+---
+
+<Label position="top-right">Top Right Label</Label>
+
+Label component works on any layout — not just panel or profile.
+
+---
+layout: panel
+color: black
+align: left
+---
+
+<Note>Bottom Left (default)</Note>
+<Note position="bottom-right">Bottom Right</Note>
+<Note position="top-left">Top Left</Note>
+<Note position="top-right">Top Right</Note>
+
+Use `<Note>` for small, muted annotation text in any corner.
+
+The `position` prop works the same as `<Label>`. Default is `bottom-left`.
+
+---
+layout: panel
+color: black
+align: left
+---
+
+<PageNumber />
+
+Use `<PageNumber />` to show the current page number. Built on top of `<Label>`.
+
+Add `showTotal` to also display the total number of slides.
+
+---
+layout: panel
+color: black
+align: left
+---
+
+<PageNumber :showTotal="true" position="bottom-right" />
+
+With `:showTotal="true"`, the format becomes `current / total`.
+
+The `position` prop works the same as `<Label>`. Default is `bottom-right`.
 
 ---
 layout: image-left
@@ -259,6 +453,182 @@ label: Photo label
 ## Image Label
 
 To display a label at the bottom of an image, add `label` to the front matter of either the `image-left` or `image-right` layout.
+
+---
+layout: section
+---
+
+# Stats
+
+---
+layout: stats
+stats:
+  - value: '98%'
+    label: Uptime
+    description: Last 12 months
+  - value: '2M'
+    label: Active Users
+    description: Monthly active
+  - value: '$50M'
+    label: Revenue
+    description: FY 2025
+---
+
+# Key Metrics
+
+---
+layout: stats
+stats:
+  - value: '12k'
+    label: Commits
+  - value: '340'
+    label: Contributors
+  - value: '4.9'
+    label: Avg Rating
+  - value: '99%'
+    label: Test Coverage
+---
+
+---
+layout: section
+---
+
+# Timeline
+
+---
+layout: timeline
+events:
+  - date: '2020'
+    title: Founded
+    description: Company established in Tokyo
+  - date: '2021'
+    title: Series A
+    description: Raised $5M in funding
+  - date: '2022'
+    title: Launch
+    description: Product released globally
+  - date: '2023'
+    title: 1M Users
+    description: Reached first million
+  - date: '2024'
+    title: Series B
+    description: Raised $20M
+---
+
+# Company History
+
+---
+layout: section
+---
+
+# Image Full
+
+---
+layout: image-full
+image: https://images.unsplash.com/photo-1522856339183-9a8b06b05937?auto=format&fit=crop&w=1200&q=80
+alt: Background
+---
+
+---
+layout: image-full
+image: https://images.unsplash.com/photo-1567484072688-2041f76a3fda?auto=format&fit=crop&w=1200&q=80
+alt: Background
+color: white
+---
+
+---
+layout: image-full
+image: https://images.unsplash.com/photo-1548811595-624255ed9e72?auto=format&fit=crop&w=1200&q=80
+alt: Background
+dim: true
+---
+
+# Full-Bleed Image
+
+Use `dim: true` to add a dark overlay for text readability.
+
+Set `color` to `blue` (default) or `white` to switch the frame color.
+
+---
+layout: section
+---
+
+# Comparison
+
+---
+layout: comparison
+leftTitle: Before
+rightTitle: After
+---
+
+::left::
+
+- Manual deployment
+- Weekly releases
+- No monitoring
+- High error rate
+- Hours to rollback
+
+::right::
+
+- Automated CI/CD
+- Daily releases
+- Real-time alerts
+- 99.9% uptime
+- One-click rollback
+
+---
+layout: comparison
+leftTitle: Monolith
+rightTitle: Microservices
+---
+
+::left::
+
+## Architecture
+
+Single deployable unit with all features bundled together.
+
+## Scaling
+
+Scale the entire application even for one bottleneck.
+
+::right::
+
+## Architecture
+
+Independent services each owning their own data and logic.
+
+## Scaling
+
+Scale only the services that need more capacity.
+
+---
+layout: section
+---
+
+# Code Blocks
+
+---
+layout: panel
+color: black
+align: left
+---
+
+## Code Blocks & Inline Code
+
+Fenced code blocks use the standard dark background.
+
+```ts
+function greet(name: string): string {
+  return `Hello, ${name}!`
+}
+
+console.log(greet('World'))
+```
+
+Inline `code` uses a gray background by default.
+Use `<Underline>text</Underline>` to apply a blue underline: <Underline>underlined code</Underline>
 
 ---
 layout: section
