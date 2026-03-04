@@ -162,6 +162,23 @@ layout: table
 | Ultra | $249            | 5 TB    | VIP 24/7 White Glove |
 
 ---
+layout: panel
+color: black
+align: left
+---
+
+## Table in Panel Layout
+
+You can also use a standard Markdown table inside other layouts.
+
+| Feature        | Basic     | Pro           |
+| -------------- | --------- | ------------- |
+| Max projects   | 3         | Unlimited     |
+| Support        | Community | Priority      |
+| Export formats | PDF only  | PDF, PPTX, MD |
+| Custom domain  | -         | Available     |
+
+---
 layout: cols
 ---
 
@@ -674,6 +691,59 @@ console.log(greet('World'))
 
 Inline `code` uses a gray background by default.
 Use `<Underline>text</Underline>` to apply a blue underline: <Underline>underlined code</Underline>
+
+---
+layout: section
+---
+
+# Blockquotes
+
+---
+layout: panel
+color: black
+align: left
+---
+
+## Blockquote styling
+
+Use standard Markdown blockquotes to call out important statements.
+
+> Great design is not just what it looks like and feels like. Design is how it works.
+>
+> — Steve Jobs
+
+You can also mix blockquotes with other text on the same slide.
+
+---
+layout: section
+---
+
+# Note Blocks
+
+---
+layout: panel
+color: black
+align: left
+---
+
+## NoteBlock component
+
+Use the `NoteBlock` component to create emphasized note blocks without writing raw HTML divs.
+
+<NoteBlock type="info">
+Information
+This is an informational note. The second line is optional.
+</NoteBlock>
+
+<NoteBlock type="warn">
+Warning
+Please pay attention to this point.
+</NoteBlock>
+
+<NoteBlock type="alert">
+Alert
+Do not perform this action.
+</NoteBlock>
 
 ---
 layout: section
