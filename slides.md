@@ -2,7 +2,6 @@
 theme: cobalt
 title: Slidev Cobalt Template
 transition: slide-left
-mdc: true
 layout: cover
 ---
 
